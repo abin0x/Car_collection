@@ -1,0 +1,14 @@
+{% extends "cars/base_generic.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+{% comment %} <h1>Your Profile</h1> {% endcomment %}
+<h2>Your Orders</h2>
+<ul class="list-group">
+    {% for order in orders %}
+        <li class="list-group-item">
+            {{ order.car.name }} - ${{ order.car.price }} (Ordered on {{ order.created_at }})
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'edit_profile' %}">Edit Profile</a>
+{% endblock %}

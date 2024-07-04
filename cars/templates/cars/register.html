@@ -1,0 +1,11 @@
+{% extends "cars/base_generic.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<h2>Register</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}
